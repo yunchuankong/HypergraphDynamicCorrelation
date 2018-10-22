@@ -1,3 +1,6 @@
+## Author: Yunchuan Kong
+## Copyright Reserved 2018
+
 library(igraph)
 
 # Match GO terms with GO IDs

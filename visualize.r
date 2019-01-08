@@ -74,7 +74,7 @@ plot_entrie_sup <- function(net, label, GO.select, folds=10){
 
 
 ## INPUT: g, elist from plot_entire_sup(), and folds should be consistent
-plot_top_sup <- function(g, elist, GO.select, folds, n_keep=15){
+plot_top_sup <- function(g, elist, label, GO.select, folds, n_keep=15){
   library(GO.db)
   f = folds
   hdegrees=table(elist[,1:3])
@@ -143,7 +143,7 @@ plot_top_sup <- function(g, elist, GO.select, folds, n_keep=15){
 }
 
 ## INPUT: g, elist from plot_entire_sup(), and folds should be consistent
-plot_one_sup <- function(g, elist, GO.select, folds, GOID){
+plot_one_sup <- function(g, elist, label, GO.select, folds, GOID){
   library(GO.db)
   f = folds
   term = Term(GOID)
@@ -410,7 +410,7 @@ plot_entrie_unsup <- function(net, label, folds=10){
 
 
 ## INPUT: g, elist from plot_entire_unsup(), and folds should be consistent
-plot_top_unsup <- function(g, elist, folds, n_keep=15){
+plot_top_unsup <- function(g, elist, label, folds, n_keep=15){
   f = folds
   hdegrees=table(elist[,1:3])
   nokeep=n_keep # number of nodes to keep

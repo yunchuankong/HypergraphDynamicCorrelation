@@ -9,7 +9,7 @@ source("visualize.r")
 
 ## Given data matrix "array" and supervised labels "GO.select"
 
-hypergraph_unsup <- function(array, fdr=0.2, save_triplets=FALSE, save_glist=FALSE){
+hypergraph_unsup <- function(array, fdr=0.2, save_triplets=FALSE, save_glist=FALSE, cor_thres=1){
 
     dat <- deleteZeros(array)
     dat <- normalizeData(dat)
@@ -22,7 +22,7 @@ hypergraph_unsup <- function(array, fdr=0.2, save_triplets=FALSE, save_glist=FAL
     colnames(dat)=NULL
 
     corr=cor(t(dat))  ## pairwise correlation matrix
-    dict <- penalizeCorr(corr)  ## "dictionary" for low correlated pairs
+    dict <- penalizeCorr(corr, cor_thres)  ## "dictionary" for low correlated pairs
     diag(dict) <- 0
 
     triplets <- makeTriplets(nog, nos, dat, dict, fdr=fdr) 
@@ -58,7 +58,7 @@ hypergraph_unsup <- function(array, fdr=0.2, save_triplets=FALSE, save_glist=FAL
     return(res_unsup)
 }
 
-hypergraph_sup <- function(array, label_list, fdr=0.2, save_triplets=FALSE, save_glist=FALSE){
+hypergraph_sup <- function(array, label_list, fdr=0.2, save_triplets=FALSE, save_glist=FALSE, cor_thres=1){
 
     dat <- deleteZeros(array)
     dat <- normalizeData(dat)
@@ -71,7 +71,7 @@ hypergraph_sup <- function(array, label_list, fdr=0.2, save_triplets=FALSE, save
     colnames(dat)=NULL
 
     corr=cor(t(dat))  ## pairwise correlation matrix
-    dict <- penalizeCorr(corr)  ## "dictionary" for low correlated pairs
+    dict <- penalizeCorr(corr, cor_thres)  ## "dictionary" for low correlated pairs
     diag(dict) <- 0
 
     triplets <- makeTriplets(nog, nos, dat, dict, fdr=fdr)

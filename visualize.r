@@ -55,6 +55,7 @@ plot_entrie_sup <- function(net, label, GO.select, folds=10){
   ewidth = log(E(g)$weight-f+1)
 
   # pdf(paste("full_sup (f=",f,").pdf",sep=''))
+#   png("Figure1.png")
   plot(g, # http://igraph.org/r/doc/plot.common.html
       edge.width=ewidth,
       edge.color='grey75',
@@ -63,7 +64,7 @@ plot_entrie_sup <- function(net, label, GO.select, folds=10){
       vertex.label.color='black',
       vertex.frame.color=NA,
       vertex.size=5)
-  # dev.off()
+#   dev.off()
   # cat("A full hypergraph plot (2-D version) for the supervised approach has been saved.\n")
   res <- NULL
   res$elist <- elist
@@ -122,6 +123,7 @@ plot_top_sup <- function(g, elist, label, GO.select, folds, n_keep=15){
   V(hg)$size[!is.na(hind)]=hvsizes
   
   # pdf(paste("Top",nokeep,"Connected_sup (f=",f,").pdf",sep=''))
+#   png("Figure1.png")
   plot(hg, # http://igraph.org/r/doc/plot.common.html
        edge.width=hewidth,
        edge.color='grey80',

@@ -21,7 +21,7 @@ Suposse all relevant files are in the same folder, and the work directory has be
 source("main.r")
 load('spellman_73_filled.bin')
 load("GO_select_yeast_ 0.7 0.4 1000 20 .bin")
-array = array[sample(nrow(array), 1000),]
+array = array[sample(nrow(array), 500),]
 ```
 
 ### Unsupervised hypergraph construction

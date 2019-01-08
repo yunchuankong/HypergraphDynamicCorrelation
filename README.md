@@ -55,7 +55,6 @@ full_hypergraph_sp <- plot_entrie_sup(hp_sp$net, hp_sp$label, GO.select, folds=5
 plot_top_sup(full_hypergraph_sp$g, full_hypergraph_sp$elist, hp_sp$label, GO.select, full_hypergraph_sp$folds)
 plot_one_sup(full_hypergraph_sp$g, full_hypergraph_sp$elist, hp_sp$label, GO.select, full_hypergraph_sp$folds, "GO:2000241")
 ```
-(sample Figure 3, Figure 4 and Figure 5)
 
 Suppose one is interested in the gene level hypergraph given a specific hyperedge:
 ```
@@ -68,5 +67,5 @@ hyperedge <- c(7, 9, 34)
 
 plot_gene_level(hyperedge, GO, hp_sp$net, hp_sp$label, hp_sp$triplets, hp_sp$glist, folds=5)
 ```
-(sample Figure 6)
+
 

@@ -1,8 +1,3 @@
-
-# dyn.load(paste0(filepath, "csupp.dll")) ## for Windows only
-# source(paste0(filepath,"utils.r"))
-# source(paste0(filepath,"visualize.r")) 
-
 dyn.load("csupp.dll")
 source("utils.r")
 source("visualize.r")

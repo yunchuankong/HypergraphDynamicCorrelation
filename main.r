@@ -1,3 +1,6 @@
+## Author: Yunchuan Kong
+## Copyright Reserved 2018
+
 dyn.load("csupp.dll")
 source("utils.r")
 source("visualize.r")

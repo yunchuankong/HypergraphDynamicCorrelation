@@ -25,7 +25,7 @@ and load the main code file
 ```
 source("main.r")
 ```
-#### NOTE: the program is running on a Windows machine by default. If you are using Linux system, change the line "dyn.load("csupp.dll")" into "dyn.load("csupp.so")". Both csupp.dll (for Windows) and csupp.so (for Linux) files are provided in this repository.
+#### NOTE: The program is running on a Windows machine by default. If you are using Linux system, change the line "dyn.load("csupp.dll")" into "dyn.load("csupp.so")". Both csupp.dll (for Windows) and csupp.so (for Linux) files are provided in this repository.
 
 ### Unsupervised hypergraph construction
 

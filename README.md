@@ -15,14 +15,17 @@ The following packages are required for executing the main code file: igraph, co
 
 ### Preliminary process
 
-Suposse all relevant files are in the same folder, and the work directory has been set properly.
-
+Suposse all relevant files are in the same folder, and the work directory has been set properly. First, load in data
 ```
-source("main.r")
 load('spellman_73_filled.bin')
 load("GO_select_yeast_ 0.7 0.4 1000 20 .bin")
 array = array[sample(nrow(array), 500),]
 ```
+and load the main code file
+```
+source("main.r")
+```
+#### NOTE: the program is running on a Windows machine by default. If you are using Linux system, change the line "dyn.load("csupp.dll")" into "dyn.load("csupp.so")". Both csupp.dll (for Windows) and csupp.so (for Linux) files are provided in this repository.
 
 ### Unsupervised hypergraph construction
 

@@ -26,11 +26,11 @@ and load the main code file
 source("main.r")
 ```
 #### NOTE: The program is running on a Windows machine by default. 
-If you are using Linux system, change the line
+If you are using Linux system, find the line
 ```
 dyn.load("csupp.dll") 
 ```
-into 
+in main.r and change it into 
 ```
 dyn.load("csupp.so")
 ```

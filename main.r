@@ -1,7 +1,8 @@
 ## Author: Yunchuan Kong
 ## Copyright Reserved 2018
 
-dyn.load("csupp.dll")
+dyn.load("csupp.dll") ## uncomment if using Windows
+# dyn.load("csupp.so") ## Uncomment if using Linux
 source("utils.r")
 source("visualize.r")
 

@@ -34,7 +34,7 @@ in main.r and change it into
 ```
 dyn.load("csupp.so")
 ```
-Both csupp.dll (for Windows) and csupp.so (for Linux) files are provided in this repository.
+Both csupp.dll (for Windows) and csupp.so (for Linux) are provided in this repository.
 
 ### Unsupervised hypergraph construction
 

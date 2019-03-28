@@ -54,7 +54,7 @@ plot_entrie_sup <- function(net, label, GO.select, folds=10){
   # ewidth=(E(g)$weight-f)/(mean(E(g)$weight)-f)
   ewidth = log(E(g)$weight-f+1)
 
-  # pdf(paste("full_sup (f=",f,").pdf",sep=''))
+  pdf(paste("full_sup (f=",f,").pdf",sep=''))
 #   png("Figure1.png")
   plot(g, # http://igraph.org/r/doc/plot.common.html
       edge.width=ewidth,
@@ -64,8 +64,8 @@ plot_entrie_sup <- function(net, label, GO.select, folds=10){
       vertex.label.color='black',
       vertex.frame.color=NA,
       vertex.size=5)
-#   dev.off()
-  # cat("A full hypergraph plot (2-D version) for the supervised approach has been saved.\n")
+  dev.off()
+  cat("A full hypergraph plot (2-D version) for the supervised approach has been saved.\n")
   res <- NULL
   res$elist <- elist
   res$g <- g
@@ -122,7 +122,7 @@ plot_top_sup <- function(g, elist, label, GO.select, folds, n_keep=15){
   hvsizes=4 * (hvsizes+2)
   V(hg)$size[!is.na(hind)]=hvsizes
   
-  # pdf(paste("Top",nokeep,"Connected_sup (f=",f,").pdf",sep=''))
+  pdf(paste("Top",nokeep,"Connected_sup (f=",f,").pdf",sep=''))
 #   png("Figure1.png")
   plot(hg, # http://igraph.org/r/doc/plot.common.html
        edge.width=hewidth,
@@ -140,8 +140,8 @@ plot_top_sup <- function(g, elist, label, GO.select, folds, n_keep=15){
          # ,lwd=4
          # ,title="legend"
   ) 
-  # dev.off()
-  # cat("A hypergraph plot of the",nokeep,"most connected vertices for the supervised approach has been saved.\n")
+  dev.off()
+  cat("A hypergraph plot of the",nokeep,"most connected vertices for the supervised approach has been saved.\n")
 }
 
 ## INPUT: g, elist from plot_entire_sup(), and folds should be consistent
@@ -212,7 +212,7 @@ plot_one_sup <- function(g, elist, label, GO.select, folds, GOID){
   hvsizes=4 * (hvsizes+2)
   V(hg)$size[!is.na(hind)]=hvsizes
 
-  # pdf(paste(term,"_sup (f=",f,").pdf",sep=''))
+  pdf(paste(term,"_sup (f=",f,").pdf",sep=''))
   plot(hg, # http://igraph.org/r/doc/plot.common.html
        edge.width=hewidth,
        edge.color='grey80',
@@ -231,8 +231,8 @@ plot_one_sup <- function(g, elist, label, GO.select, folds, GOID){
          # ,lwd=4
          # ,title="legend"
   ) 
-  # dev.off()
-  # cat("A hypergraph plot of",GOID,"and its connected vertices has been saved.\n")
+  dev.off()
+  cat("A hypergraph plot of",GOID,"and its connected vertices has been saved.\n")
 }
 
 ##############################################################################################
@@ -329,8 +329,8 @@ plot_gene_level <- function(hyperedge, module_names,
   hvsizes=3 * (hvsizes+1)
   V(hg)$size[!is.na(hind)]=hvsizes
   
-  # pdf(paste0("graph_gene_level"))
-  # layout <- layout_with_kk(hg)
+  pdf(paste0("graph_gene_level"))
+  layout <- layout_with_kk(hg)
   # set.seed(2)
   plot(hg, # http://igraph.org/r/doc/plot.common.html
        layout=layout_with_lgl(hg), # layout_on_sphere(hg),
@@ -350,7 +350,7 @@ plot_gene_level <- function(hyperedge, module_names,
          # ,lwd=4
          # ,title="legend"
   ) 
-  # dev.off()
+  dev.off()
 }
 
 
@@ -392,7 +392,7 @@ plot_entrie_unsup <- function(net, label, folds=10){
   # ewidth=(E(g)$weight-f)/(mean(E(g)$weight)-f)
   ewidth = log(E(g)$weight-f+1)
   
-  # pdf(paste("full_unsup (f=",f,").pdf",sep=''))
+  pdf(paste("full_unsup (f=",f,").pdf",sep=''))
   plot(g, # http://igraph.org/r/doc/plot.common.html
        edge.width=ewidth,
        edge.color='grey75',
@@ -401,8 +401,8 @@ plot_entrie_unsup <- function(net, label, folds=10){
        vertex.label.color='black',
        vertex.frame.color=NA,
        vertex.size=5)
-  # dev.off()
-  # cat("A full hypergraph plot (2-D version) for the unsupervised approach has been saved.\n")
+  dev.off()
+  cat("A full hypergraph plot (2-D version) for the unsupervised approach has been saved.\n")
   res <- NULL
   res$elist <- elist
   res$g <- g
@@ -460,7 +460,7 @@ plot_top_unsup <- function(g, elist, label, folds, n_keep=15){
   hvsizes=6 * (hvsizes+2)
   V(hg)$size[!is.na(hind)]=hvsizes
   
-  # pdf(paste("Top",nokeep,"Connected_unsup (f=",f,").pdf",sep=''))
+  pdf(paste("Top",nokeep,"Connected_unsup (f=",f,").pdf",sep=''))
   plot(hg, # http://igraph.org/r/doc/plot.common.html
        edge.width=hewidth,
        edge.color='grey80',
@@ -477,8 +477,8 @@ plot_top_unsup <- function(g, elist, label, folds, n_keep=15){
          # ,lwd=4
          # ,title="legend"
   ) 
-  # dev.off()
-  # cat("A hypergraph plot of the",nokeep,"most connected vertices for the unsupervised approach has been saved.\n")
+  dev.off()
+  cat("A hypergraph plot of the",nokeep,"most connected vertices for the unsupervised approach has been saved.\n")
 }
 
 

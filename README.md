@@ -1,4 +1,4 @@
-# HypergraphDynamicCorrelation
+# Hypergraph for Dynamic Correlation
 
 
 

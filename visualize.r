@@ -330,7 +330,7 @@ plot_gene_level <- function(hyperedge, module_names,
   V(hg)$size[!is.na(hind)]=hvsizes
   
   pdf(paste0("graph_gene_level"))
-  layout <- layout_with_kk(hg)
+#   layout <- layout_with_kk(hg)
   # set.seed(2)
   plot(hg, # http://igraph.org/r/doc/plot.common.html
        layout=layout_with_lgl(hg), # layout_on_sphere(hg),

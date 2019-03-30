@@ -3,7 +3,7 @@
 
 dyn.load("csupp.dll") ## uncomment if using Windows
 # dyn.load("csupp.so") ## Uncomment if using Linux
-# dyn.load("/csupp_OS/csupp.so") ## Uncomment if using OS
+# dyn.load("csupp_OS/csupp.so") ## Uncomment if using OS
 
 source("utils.r")
 source("visualize.r")

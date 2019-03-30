@@ -33,7 +33,7 @@ penalizeCorr <- function(corr, thres=1){
   mu_v=mean(v)
   sd_v=sd(v)
   dict=ifelse((corr>mu_v-1*sd_v & corr<mu_v+1*sd_v) , 1, 0)
-  cat("Correlation thresholds:",c(mu_v-thres*sd_v,mu_v+thres*sd_v),"\n")
+#   cat("Correlation thresholds:",c(mu_v-thres*sd_v,mu_v+thres*sd_v),"\n")
   return(dict)
 }
 

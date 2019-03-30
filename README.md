@@ -26,15 +26,21 @@ and load the main code file
 source("main.r")
 ```
 #### NOTE: The program is running on a Windows machine by default. 
-If you are using Linux system, find the line
+If you are using other operating systems, in main.r, find and comment out the line
 ```
 dyn.load("csupp.dll") 
 ```
-in main.r and change it into 
+and uncomment the line 
 ```
 dyn.load("csupp.so")
 ```
-Both csupp.dll (for Windows) and csupp.so (for Linux) are provided in this repository.
+for Linux or uncomment the line
+```
+dyn.load("csupp_OS/csupp.so")
+```
+for Mac OS.
+
+Relevant files are all provided in this repository.
 
 ### Unsupervised hypergraph construction
 
@@ -63,9 +69,9 @@ hp_sp <- hypergraph_sup(array, GO.select, fdr=0.2, save_triplets=T, save_glist=T
 ```
 and visualize the full hypergraph, top-connected sub-hypergraph and module-specified sub-hypergraph by
 ```
-full_hypergraph_sp <- plot_entrie_sup(hp_sp$net, hp_sp$label, GO.select, folds=5)
+full_hypergraph_sp <- plot_entrie_sup(hp_sp$net, hp_sp$label, GO.select, folds=2)
 plot_top_sup(full_hypergraph_sp$g, full_hypergraph_sp$elist, hp_sp$label, GO.select, full_hypergraph_sp$folds)
-plot_one_sup(full_hypergraph_sp$g, full_hypergraph_sp$elist, hp_sp$label, GO.select, full_hypergraph_sp$folds, "GO:2000241")
+plot_one_sup(full_hypergraph_sp$g, full_hypergraph_sp$elist, hp_sp$label, GO.select, full_hypergraph_sp$folds, "GO:0007126")
 ```
 
 Suppose one is interested in the gene level hypergraph given a specific hyperedge:
@@ -75,9 +81,9 @@ module_names <- Term(GO)
 which(GO=="GO:0000747")
 which(GO=="GO:0007126")
 which(GO=="GO:0045454")
-hyperedge <- c(7, 9, 34)
+hyperedge <- c(2, 9, 34)
 
-plot_gene_level(hyperedge, GO, hp_sp$net, hp_sp$label, hp_sp$triplets, hp_sp$glist, folds=5)
+plot_gene_level(hyperedge, GO, hp_sp$net, hp_sp$label, hp_sp$triplets, hp_sp$glist, folds=2)
 ```
 
 

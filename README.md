@@ -53,7 +53,7 @@ and visualize the full hypergraph and top-connected sub-hypergraph by
 full_hypergraph_us <- plot_entrie_unsup(hp_us$net, hp_us$label, folds=2)
 plot_top_unsup(full_hypergraph_us$g, full_hypergraph_us$elist, hp_us$label, full_hypergraph_us$folds)
 ```
-(sample Figure 1 and Figure 2)
+(Figure1 and Figure2)
 
 One can also conduct GO enrichment test using
 ```
@@ -74,6 +74,7 @@ plot_top_sup(full_hypergraph_sp$g, full_hypergraph_sp$elist, hp_sp$label, GO.sel
 plot_one_sup(full_hypergraph_sp$g, full_hypergraph_sp$elist, hp_sp$label, GO.select, full_hypergraph_sp$folds, 
              "GO:0006090", max_num_display = 16)
 ```
+(Figure3, Figure4 and Figure5)
 
 Suppose one is interested in the gene level hypergraph given a specific hyperedge:
 ```
@@ -87,5 +88,5 @@ hyperedge <- c(232, 141, 1)
 plot_gene_level(hyperedge, GO, hp_sp$net, hp_sp$label, hp_sp$triplets, hp_sp$glist, folds=10)
 
 ```
-
+(Figure6)
 

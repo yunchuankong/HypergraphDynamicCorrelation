@@ -59,7 +59,7 @@ One can also conduct GO enrichment test using
 ```
 enrichment <- GOen(hp_us$glist, hp_us$label)
 ```
-, which generates a list of enrichment results for each gene cluster.
+which generates a list of enrichment results for each gene cluster.
 
 ### Supervised hypergraph construction
 

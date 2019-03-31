@@ -19,7 +19,7 @@ Suposse all relevant files are in the same folder, and the work directory has be
 ```
 load('spellman_73_filled.bin')
 load("GO_select_yeast_ 0.7 0.4 1000 20 .bin")
-array = array[sample(nrow(array), 500),]
+array = array[sample(nrow(array), 1000),]
 ```
 and load the main code file
 ```
@@ -69,21 +69,23 @@ hp_sp <- hypergraph_sup(array, GO.select, fdr=0.2, save_triplets=T, save_glist=T
 ```
 and visualize the full hypergraph, top-connected sub-hypergraph and module-specified sub-hypergraph by
 ```
-full_hypergraph_sp <- plot_entrie_sup(hp_sp$net, hp_sp$label, GO.select, folds=2)
+full_hypergraph_sp <- plot_entrie_sup(hp_sp$net, hp_sp$label, GO.select, folds=10)
 plot_top_sup(full_hypergraph_sp$g, full_hypergraph_sp$elist, hp_sp$label, GO.select, full_hypergraph_sp$folds)
-plot_one_sup(full_hypergraph_sp$g, full_hypergraph_sp$elist, hp_sp$label, GO.select, full_hypergraph_sp$folds, "GO:0007126")
+plot_one_sup(full_hypergraph_sp$g, full_hypergraph_sp$elist, hp_sp$label, GO.select, full_hypergraph_sp$folds, 
+             "GO:0006090", max_num_display = 16)
 ```
 
 Suppose one is interested in the gene level hypergraph given a specific hyperedge:
 ```
 GO <- names(GO.select)
 module_names <- Term(GO)
-which(GO=="GO:0000747")
-which(GO=="GO:0007126")
-which(GO=="GO:0045454")
-hyperedge <- c(2, 9, 34)
+which(GO=="GO:0006090")
+which(GO=="GO:0045937")
+which(GO=="GO:2000241")
+hyperedge <- c(232, 141, 1)
 
-plot_gene_level(hyperedge, GO, hp_sp$net, hp_sp$label, hp_sp$triplets, hp_sp$glist, folds=2)
+plot_gene_level(hyperedge, GO, hp_sp$net, hp_sp$label, hp_sp$triplets, hp_sp$glist, folds=10)
+
 ```
 
 

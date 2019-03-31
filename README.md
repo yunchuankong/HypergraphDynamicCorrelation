@@ -15,7 +15,7 @@ The following packages are required for executing the main code file: igraph, co
 
 ### Preliminary process
 
-Suposse all relevant files are in the same folder, and the work directory has been set properly. First, load in data
+Suposse all relevant files are in the same folder, and the work directory has been set properly. First, load in data (as demonstration, we only random sample 1000 genes here)
 ```
 load('spellman_73_filled.bin')
 load("GO_select_yeast_ 0.7 0.4 1000 20 .bin")

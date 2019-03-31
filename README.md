@@ -34,7 +34,7 @@ and uncomment the line
 ```
 dyn.load("csupp.so")
 ```
-for Linux or uncomment the line
+for Linux, or uncomment the line
 ```
 dyn.load("csupp_OS/csupp.so")
 ```

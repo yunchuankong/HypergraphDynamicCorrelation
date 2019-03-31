@@ -19,7 +19,7 @@ Suposse all relevant files are in the same folder, and the work directory has be
 ```
 load('spellman_73_filled.bin')
 load("GO_select_yeast_ 0.7 0.4 1000 20 .bin")
-array = array[sample(nrow(array), 1000),]
+array <- array[sample(nrow(array), 1000),]
 ```
 and load the main code file
 ```
@@ -80,9 +80,9 @@ Suppose one is interested in the gene level hypergraph given a specific hyperedg
 ```
 GO <- names(GO.select)
 module_names <- Term(GO)
-which(GO=="GO:0006090")
-which(GO=="GO:0045937")
-which(GO=="GO:2000241")
+which(GO == "GO:0006090")
+which(GO == "GO:0045937")
+which(GO == "GO:2000241")
 hyperedge <- c(232, 141, 1)
 
 plot_gene_level(hyperedge, GO, hp_sp$net, hp_sp$label, hp_sp$triplets, hp_sp$glist, folds=10)

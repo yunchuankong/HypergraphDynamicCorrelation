@@ -145,7 +145,7 @@ plot_top_sup <- function(g, elist, label, GO.select, folds, n_keep=15){
 }
 
 ## INPUT: g, elist from plot_entire_sup(), and folds should be consistent
-plot_one_sup <- function(g, elist, label, GO.select, folds, GOID){
+plot_one_sup <- function(g, elist, label, GO.select, folds, GOID, max_num_display=15){
   library(GO.db)
   f = folds
   term = Term(GOID)
@@ -163,12 +163,13 @@ plot_one_sup <- function(g, elist, label, GO.select, folds, GOID){
         Term(names(GO.select)[helist[2]]),"\n",
         Term(names(GO.select)[helist[3]]),"\n")
     return(NULL)
-  # } 
-  # ## If want a limited number of connections per plot: (15)
-  # else if (nrow(helist)>15){
-  #     ord = order(helist[,4],decreasing = T)
-  #     helist = helist[ord[1:15],]
-  #     noe=dim(helist)[1]
+  }
+  ## If want a limited number of connections per plot: 
+  else if (nrow(helist)>max_num_display){
+      ord = order(helist[,4],decreasing = T)
+      helist = helist[ord[1:15],]
+      noe=dim(helist)[1]
+      cat("Only display at most", max_num_display, "of connections, according to the fold change rank.\n")
   } else {
     noe=dim(helist)[1]
   }
@@ -325,11 +326,11 @@ plot_gene_level <- function(hyperedge, module_names,
   noc=ncol(label)-1 # num of clusters
   freq <- table(helist)
   hvsizes=freq[match(names(V(hg))[!is.na(hind)], names(freq))]
-  hvsizes=(hvsizes-min(hvsizes))/(mean(hvsizes)-min(hvsizes))
+  # hvsizes=(hvsizes-min(hvsizes))/(mean(hvsizes)-min(hvsizes))
   hvsizes=3 * (hvsizes+1)
   V(hg)$size[!is.na(hind)]=hvsizes
   
-  pdf(paste0("graph_gene_level"))
+  pdf(paste0("graph_gene_level.pdf"))
 #   layout <- layout_with_kk(hg)
   # set.seed(2)
   plot(hg, # http://igraph.org/r/doc/plot.common.html

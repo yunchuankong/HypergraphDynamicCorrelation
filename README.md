@@ -1,6 +1,6 @@
 # Hypergraph for Dynamic Correlation
 
-
+R code for methods proposed by https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-019-5787-x.
 
 ## Prerequisites
 
